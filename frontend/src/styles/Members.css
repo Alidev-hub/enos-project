@@ -1,0 +1,275 @@
+/* =========================
+   SECTION TEAM
+========================= */
+
+.team {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
+
+.team-section {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 160px 20px 100px;
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 30, 0.85),
+    rgba(5, 15, 30, 0.6)
+  );
+  z-index: 1;
+}
+
+
+.team-title {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 80px;
+  text-shadow:
+    0 0 10px rgba(63,169,245,0.7),
+    0 0 30px rgba(63,169,245,0.5);
+  margin-top: -40px;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider {
+  position: relative;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   CARTE (SLIDE)
+========================= */
+
+.slide {
+  position: absolute;
+  width: 320px;
+  height: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  /* Background personnalisé */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -30px;
+}
+
+/* Assombrissement léger pour lisibilité */
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0)
+  );
+  z-index: 1;
+}
+
+/* =========================
+   IMAGE MEMBRE
+========================= */
+
+.slide img {
+  position: relative;
+  z-index: 2;
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+  transition: transform 0.6s ease;
+}
+
+.slide:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   INFOS TEXTE
+========================= */
+
+.slide-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  z-index: 3;
+}
+
+.slide-info h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.slide-info span {
+  display: block;
+  font-size: 14px;
+  color: #3fa9f5;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.slide-info p {
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+/* =========================
+   POSITION ACTIVE
+========================= */
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 3;
+  box-shadow:
+    0 0 40px rgba(63,169,245,0.4),
+    0 0 80px rgba(63,169,245,0.2);
+}
+
+/* Slide gauche */
+.slide.prev {
+  transform: translateX(-380px) scale(0.9);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+/* Slide droite */
+.slide.next {
+  transform: translateX(380px) scale(0.9);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .team {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .team-section {
+    padding: 130px 20px 70px;
+  }
+
+  .team-title {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+
+  .slider {
+    height: 430px;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 260px;
+    height: 380px;
+    top: 0;
+  }
+
+  .slide.active {
+    transform: scale(1);
+  }
+
+  .slide.prev {
+    transform: translateX(-230px) scale(0.82);
+    opacity: 0.35;
+  }
+
+  .slide.next {
+    transform: translateX(230px) scale(0.82);
+    opacity: 0.35;
+  }
+
+  .slide img {
+    width: 82%;
+    margin-top: 18px;
+  }
+
+  .slide-info {
+    padding: 24px 16px;
+  }
+
+  .slide-info h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .team-section {
+    padding: 120px 16px 55px;
+  }
+
+  .team-title {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 35px;
+  }
+
+  .slider {
+    height: 390px;
+  }
+
+  .slide {
+    width: 235px;
+    height: 350px;
+  }
+
+  .slide.prev {
+    transform: translateX(-175px) scale(0.78);
+    opacity: 0.22;
+  }
+
+  .slide.next {
+    transform: translateX(175px) scale(0.78);
+    opacity: 0.22;
+  }
+
+  .slide-info {
+    padding: 22px 14px;
+  }
+
+  .slide-info h3 {
+    font-size: 20px;
+  }
+
+  .slide-info span {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .slide-info p {
+    font-size: 12px;
+  }
+}

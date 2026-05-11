@@ -1,0 +1,126 @@
+.about-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(3, 10, 24, 0.9), rgba(3, 10, 24, 0.52)),
+    radial-gradient(circle at 55% 26%, rgba(40, 169, 255, 0.12), transparent 34%);
+  backdrop-filter: blur(3px);
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  width: min(90%, 980px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 165px 0 90px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.about-content h1 {
+  margin: 0;
+  color: #d8e1ff;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-shadow: 0 0 22px rgba(63, 169, 245, 0.22);
+}
+
+.about-subtitle {
+  max-width: 850px;
+  margin: 28px auto 34px;
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 1.55rem);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.about-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 38px;
+}
+
+.about-brand img {
+  width: clamp(180px, 18vw, 260px);
+  height: auto;
+  filter: drop-shadow(0 0 16px rgba(0, 174, 255, 0.3));
+}
+
+.about-brand span {
+  color: #fff;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+.about-description {
+  max-width: 860px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1rem, 1.8vw, 1.45rem);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.inline-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.inline-brand img {
+  width: 82px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.25));
+}
+
+.inline-brand span {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .about-page {
+    overflow: visible;
+  }
+
+  .about-content {
+    min-height: auto;
+    padding: 130px 0 64px;
+  }
+
+  .about-subtitle {
+    margin: 22px auto 28px;
+  }
+
+  .about-brand {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .inline-brand img {
+    width: 60px;
+  }
+}
